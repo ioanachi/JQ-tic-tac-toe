@@ -1,6 +1,7 @@
 var $ = require("jquery");
 $("document").ready(function() {
 
+
   var isx = true;
   var va1, va2, va3, vb1, vb2, vb3, vc1, vc2, vc3 = '';
   function iavalori(){
@@ -66,6 +67,15 @@ iavalori();
     iavalori();
 
     cheama();
+
+
+
+  });
+  $("button").click(function(){
+$("td").html(" ");
+
+
+
 
 
 
