@@ -15,19 +15,28 @@ $("document").ready(function() {
 }
   function combinationarr (){
   var arr =[[va1,va2,va3], [vb1,vb2,vb3],[vc1,vc2,vc3],[va1,vb1,vc1], [va2,vb2,vc2],[va3,vb3,vc3], [va1,vb2,vc3], [va3,vb2,vc1]];
-  console.log(arr);
+  // console.log(arr);
 // i in interiorul lui arr
 for (var i = 0; i < arr.length; i++) {
   // z in interiorul arrayurilor
-    var one = arr[i][0];
-    var two = arr[i][1];
-    var three = arr[i][2];
-    if (one == "X" && three == "X" && two == "X") {
-      $("h2").html(" X wins");
+  for (var z = 0; z < arr[i].length; z++) {
+    if (arr[i][z] == "X") {
+      console.log(arr[i][z]);
+
+       $("h2").html(" X wins");
+       $("h2").addClass("clX");
     }
-    else if (one == "0" && three == "0" && two == "0") {
-      $("h2").html(" 0 wins");
-    }
+  }
+  // --------------------------VARIANTA CARE FUNCTIONEAZA DUPA PRIMUL FOR______________________
+    // var one = arr[i][0];
+    // var two = arr[i][1];
+    // var three = arr[i][2];
+    // if (one == "X" && three == "X" && two == "X") {
+    //   $("h2").html(" X wins").addClass("clX");
+    // }
+    // else if (one == "0" && three == "0" && two == "0") {
+    //   $("h2").html(" 0 wins").addClass("clO");
+    // }
     // else {
     //   $("h2").html(" it's a  tie");
     //
