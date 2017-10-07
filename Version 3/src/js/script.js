@@ -17,7 +17,25 @@ $("document").ready(function() {
   function combinationarr() {
     var arr = [va1, va2, va3, vb1, vb2, vb3, vc1, vc2, vc3];
     for (var i = 0; i < arr.length; i++) {
-      if (i == 0 || i == 1 || i == 2) {
+
+      if (i == 0) {
+        var one = arr[i];
+        var two = arr[i + 1];
+        var three = arr[i + 2];
+        var four = arr[i + 3];
+        var five = arr[i + 6];
+        var six = arr[i + 4];
+        var seven = arr[i + 8];
+
+        if ((one == "X" && two == "X" && three == "X") || (one == "X" && four == "X" && five == "X") || (one == "X" && six =="X" && seven == "X")) {
+          $("h2").html("X wins");
+        } else if ((one == "0" && two == "0" && three == "0") || (one == "0" && four == "0" && five == "0") || (one == "0" && six =="0" && seven == "0")) {
+          console.log("de ceeeeeeeeeeeee")
+          $("h2").html("O wins");
+        }
+
+      } else if (i == 1) {
+        console.log('uuu' + i);
         var one = arr[i];
         var two = arr[i + 3];
         var three = arr[i + 6];
@@ -26,36 +44,37 @@ $("document").ready(function() {
         } else if (one == "0" && two == "0" && three == "0") {
           $("h2").html("O wins");
         }
-      }else if (i == 0 || i == 3 || i == 6) {
-          var one = arr[i];
-          var two = arr[i + 1];
-          var three = arr[i + 2];
-          console.log(one, two, three, "boooooooooooooo");
-
-          if (one == "X" && two == "X" && three == "X") {
-            $("h2").html("X wins");
-          } else if (one == "0" && two == "0" && three == "0") {
-            $("h2").html("O wins");
-          }
-        } else if (i == 0) {
-          var one = arr[i];
-          var two = arr[i + 4];
-          var three = arr[i + 8];
-          if (one == "X" && two == "X" && three == "X") {
-            $("h2").html("X wins");
-          } else if (one == "0" && two == "0" && three == "0") {
-            $("h2").html("O wins");
-          }
-        } else if (i == 2) {
-          var one = arr[i];
-          var two = arr[i + 2];
-          var three = arr[i + 4];
-          if (one == "X" && two == "X" && three == "X") {
-            $("h2").html("X wins");
-          } else if (one == "0" && two == "0" && three == "0") {
-            $("h2").html("O wins");
-          }
+      } else if (i == 3 || i == 6) {
+        console.log('---------------');
+        console.log('uuu' + i);
+        var one = arr[i];
+        var two = arr[i + 1];
+        var three = arr[i + 2];
+        console.log(one, two, three, "boooooooooooooo");
+        if (one == "X" && two == "X" && three == "X") {
+          $("h2").html("X wins");
+        } else if (one == "0" && two == "0" && three == "0") {
+          $("h2").html("O wins");
         }
+      } else if (i == 0) {
+        var one = arr[i];
+        var two = arr[i + 4];
+        var three = arr[i + 8];
+        if (one == "X" && two == "X" && three == "X") {
+          $("h2").html("X wins");
+        } else if (one == "0" && two == "0" && three == "0") {
+          $("h2").html("O wins");
+        }
+      } else if (i == 2) {
+        var one = arr[i];
+        var two = arr[i + 2];
+        var three = arr[i + 4];
+        if ((one == "X" && two == "X" && three == "X")||(one == "X"  && arr[i+3] == "X"  && arr[i+6] == "X")) {
+          $("h2").html("X wins");
+        } else if ((one == "0" && two == "0" && three == "0")||(one == "0"  && arr[i+3] == "0"  && arr[i+6] == "0")) {
+          $("h2").html("O wins");
+        }
+      }
 
     }
   }
@@ -80,5 +99,7 @@ $("document").ready(function() {
   });
   $("button").click(function() {
     $("td").html(" ");
+    $("h2").html(" ");
+
   });
 });

@@ -2,50 +2,64 @@ var $ = require("jquery");
 $("document").ready(function() {
   var va1, va2, va3, vb1, vb2, vb3, vc1, vc2, vc3 = '';
 
-  function vales(){
-  va1 = $(".a1").html();
-  va2 = $(".a2").html();
-  va3 = $(".a3").html();
-  vb1 = $(".b1").html();
-  vb2 = $(".b2").html();
-  vb3 = $(".b3").html();
-  vc1 = $(".c1").html();
-  vc2 = $(".c2").html();
-  vc3 = $(".c3").html();
-}
-  function combinationarr (){
-  var arr =[[va1,va2,va3], [vb1,vb2,vb3],[vc1,vc2,vc3],[va1,vb1,vc1], [va2,vb2,vc2],[va3,vb3,vc3], [va1,vb2,vc3], [va3,vb2,vc1]];
-  // console.log(arr);
-// i in interiorul lui arr
-for (var i = 0; i < arr.length; i++) {
-  // z in interiorul arrayurilor
-  for (var z = 0; z < arr[i].length; z++) {
-    if (arr[i][z] == "X") {
-      console.log(arr[i][z]);
+  function vales() {
+    va1 = $(".a1").html();
+    va2 = $(".a2").html();
+    va3 = $(".a3").html();
+    vb1 = $(".b1").html();
+    vb2 = $(".b2").html();
+    vb3 = $(".b3").html();
+    vc1 = $(".c1").html();
+    vc2 = $(".c2").html();
+    vc3 = $(".c3").html();
+  }
 
-       $("h2").html(" X wins");
-       $("h2").addClass("clX");
+  function combinationarr() {
+    var arr = [
+      [va1, va2, va3],
+      [vb1, vb2, vb3],
+      [vc1, vc2, vc3],
+      [va1, vb1, vc1],
+      [va2, vb2, vc2],
+      [va3, vb3, vc3],
+      [va1, vb2, vc3],
+      [va3, vb2, vc1]
+    ];
+
+    // console.log(arr);
+    // i in interiorul lui arr
+    for (var i = 0; i < arr.length; i++) {
+      // z in interiorul arrayurilor
+      for (var z = 0; z < arr[i].length; z++) {
+        // console.log('['+i+']['+z+']=' + arr[i][z]);
+        console.log('['+i+']=' + arr[i]);
+        // if (arr[i][z] == "X") {
+        //
+        //   console.log(arr[i][z]);
+        //
+        //    $("h2").html(" X wins");
+        //    $("h2").addClass("clX");
+        // }
+      }
+      // --------------------------VARIANTA CARE FUNCTIONEAZA DUPA PRIMUL FOR______________________
+      // var one = arr[i][0];
+      // var two = arr[i][1];
+      // var three = arr[i][2];
+      // if (one == "X" && three == "X" && two == "X") {
+      //   $("h2").html(" X wins").addClass("clX");
+      // }
+      // else if (one == "0" && three == "0" && two == "0") {
+      //   $("h2").html(" 0 wins").addClass("clO");
+      // }
+      // else {
+      //   $("h2").html(" it's a  tie");
+      //
+      // }
     }
   }
-  // --------------------------VARIANTA CARE FUNCTIONEAZA DUPA PRIMUL FOR______________________
-    // var one = arr[i][0];
-    // var two = arr[i][1];
-    // var three = arr[i][2];
-    // if (one == "X" && three == "X" && two == "X") {
-    //   $("h2").html(" X wins").addClass("clX");
-    // }
-    // else if (one == "0" && three == "0" && two == "0") {
-    //   $("h2").html(" 0 wins").addClass("clO");
-    // }
-    // else {
-    //   $("h2").html(" it's a  tie");
-    //
-    // }
-}
-}
   var isx = true;
   $("td").click(function() {
-    vales();
+    // vales();
     var cval = $(this).html();
     if (!(cval == "X" || cval == "0")) {
       if (isx) {
@@ -57,11 +71,11 @@ for (var i = 0; i < arr.length; i++) {
       }
     }
     vales();
-    console.log(va1,va2);
+    console.log(va1, va2);
     combinationarr();
 
   });
-  $("button").click(function(){
-$("td").html(" ");
+  $("button").click(function() {
+    $("td").html(" ");
   });
 });
